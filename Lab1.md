@@ -39,14 +39,14 @@ The primary goals of this experiment are:
 Using Vagrant, an Ubuntu VM was initialized and started.
 * **Command:** `vagrant init ubuntu/jammy64` followed by `vagrant up`.
 
-![Vagrant Up Process]("C:\Users\Anirudh Chawla\OneDrive\Desktop\UPES\6th Sem\Contaninerization_And_DevOps_Lab\Lab-1\1.jpeg")
+![Vagrant Up Process]()
 > **Observation:** The system downloads the base box (Ubuntu Jammy) and configures the VirtualBox provider. Port forwarding (2222 -> 22) is established.
 
 ### **Step 2: Accessing the VM (SSH)**
 Once the VM was up, we established a connection to the guest OS.
 * **Command:** `vagrant ssh`
 
-![VM SSH Connection](![2](https://github.com/user-attachments/assets/98d1809f-14cd-48cc-9167-e92633bc4022)
+![VM SSH Connection]()
 )
 > **Observation:** Successful login to the Ubuntu 22.04.5 LTS environment.
 
@@ -54,14 +54,14 @@ Once the VM was up, we established a connection to the guest OS.
 Inside the VM terminal, the package lists were updated, and the Nginx web server was installed.
 * **Commands:** `sudo apt update`, `sudo apt install -y nginx`
 
-![Nginx Installation in VM](![3](https://github.com/user-attachments/assets/2cf3f488-df4f-411e-83e5-02f7f4d57539))
+![Nginx Installation in VM](![3]()
 > **Observation:** The `apt` package manager retrieves necessary archives. This process is slower than Docker as it installs dependencies for a full OS environment.
 
 ### **Step 4: Verification Inside VM**
 We verified the server was running locally within the guest OS.
 * **Command:** `curl localhost`
 
-![VM Internal Verification]("C:\Users\Anirudh Chawla\OneDrive\Desktop\UPES\6th Sem\Contaninerization_And_DevOps_Lab\Lab-1\4.jpeg")
+![VM Internal Verification]()
 > **Observation:** The `curl` command inside the VM returns the full HTML source of the "Welcome to nginx!" page.
 
 ---
@@ -72,7 +72,7 @@ We verified the server was running locally within the guest OS.
 The Docker engine was used to pull the Ubuntu image and deploy a containerized Nginx instance.
 * **Command:** `docker run -dp 8080:80 --name nginx-container nginx`
 
-![Docker Pull and Run](![5](https://github.com/user-attachments/assets/f94a6bf7-80bb-4dc9-9f7c-7f73ed727f24)
+![Docker Pull and Run]()
 )
 > **Observation:** Docker pulls the image layers and starts the container nearly instantaneously.
 
@@ -80,7 +80,7 @@ The Docker engine was used to pull the Ubuntu image and deploy a containerized N
 The Nginx server was verified by accessing the mapped port on the localhost.
 * **Command:** `curl localhost:8080`
 
-![Nginx Container Verification](![6](https://github.com/user-attachments/assets/ea9483cd-ffe0-4aa3-aaca-f2c078af184d)
+![Nginx Container Verification]()
 )
 > **Observation:** The `curl` command confirms the Nginx "Welcome" page is active on port 8080.
 
